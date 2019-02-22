@@ -1,0 +1,39 @@
+
+ion-item {
+    --border-radius: 10px;
+    color: #5E475D;
+    --background: #f1f1f1;
+    margin-bottom: 1rem;
+}
+ion-input {
+    color: white;
+    text-align: center;  
+}
+#individual-sets-item { 
+    --background: #5E475D;
+    color: white;
+    ion-label {
+        width: 33%;
+    }
+    ion-input {
+        text-align: left;
+        width: 20% ;
+        
+    }
+    ion-input[placeholder="____"]{
+        text-align: right;
+        &:before {
+            content: 'x'
+        }
+        &:after {
+            content: ' kg'
+        }
+    }
+    
+}
+hr {
+    background-color:white;
+}
+ion-button {
+    --color: #fff;
+}

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Back</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item >
+        <ion-label>Select Exercise</ion-label>
+        <ion-select 
+            [interfaceOptions]="customPopoverOptions" 
+            interface="popover" 
+            placeholder="Select One" 
+            mode="ios"
+            [(ngModel)]="lift"
+            >
+          <ion-select-option *ngFor="let lift of lifts">{{lift}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="lift">
+        <ion-label>Number of sets</ion-label>
+        <ion-datetime display-format="h" mode="ios"  [(ngModel)]="numberOfSets" (ionChange)="setsPicked()"></ion-datetime>
+      </ion-item >
+        <ion-list style="color: white" *ngIf="numberOfSetsEdited">
+          <div *ngFor="let set of setsArray">
+            <ion-item  id="individual-sets-item" lines="none">
+              <ion-label>№{{set}}</ion-label>
+              <ion-input placeholder="Enter reps"></ion-input>
+              <ion-input placeholder="____"></ion-input>
+            </ion-item>
+            <hr>
+          </div>
+
+          <ion-button color="primary" expand="full">Done</ion-button>
+            
+  
+          </ion-list>
+</ion-content>
